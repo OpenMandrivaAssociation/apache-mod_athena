@@ -15,6 +15,7 @@ Source0:	http://ath.googlecode.com/files/ath-%{version}.tgz
 Source1:	%{mod_conf}
 Patch0:		ath-mod_name_fix.diff
 Patch1:		ath-perl_vendor.diff
+Patch2:		ath-perl_build_fix.diff
 Requires(pre): rpm-helper
 Requires(postun): rpm-helper
 Requires(pre):  apache-conf >= %{apache_version}
@@ -51,10 +52,12 @@ Interface to Athena.
 %setup -q -n ath-%{version}
 %patch0 -p0
 %patch1 -p0
+%patch2 -p0
 
 cp %{SOURCE1} %{mod_conf}
 
 %build
+rm -rf autom4*cache
 libtoolize --copy --force; aclocal-1.7; automake-1.7 --add-missing --copy --foreign; autoheader; autoconf
 
 export CPPFLAGS="`apr-1-config --cppflags` `apr-1-config --includes` -I`%{_sbindir}/apxs -q INCLUDEDIR`"
@@ -121,4 +124,3 @@ rm -rf %{buildroot}
 %{perl_vendorarch}/auto/Athena/autosplit.ix
 %{_bindir}/athena.pl
 %{_mandir}/man3/Athena.3pm*
-
