@@ -62,7 +62,7 @@ libtoolize --copy --force; aclocal-1.7; automake-1.7 --add-missing --copy --fore
 
 export CPPFLAGS="`apr-1-config --cppflags` `apr-1-config --includes` -I`%{_sbindir}/apxs -q INCLUDEDIR`"
 
-%configure2_5x \
+%configure2_5x --localstatedir=/var/lib \
     --with-apache2=%{_prefix} \
     --with-cgi-bin=/var/www/cgi-bin \
     INSTALLDIRS=vendor
