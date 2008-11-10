@@ -7,7 +7,7 @@
 Summary:	Full-featured reverse-proxying and/or stand-alone load balancer
 Name:		apache-%{mod_name}
 Version:	2.2.0
-Release:	%mkrel 3
+Release:	%mkrel 4
 Group:		System/Servers
 License:	Apache License
 URL:		http://code.google.com/p/ath/
@@ -16,6 +16,7 @@ Source1:	%{mod_conf}
 Patch0:		ath-mod_name_fix.diff
 Patch1:		ath-perl_vendor.diff
 Patch2:		ath-perl_build_fix.diff
+Patch3:		ath-perl_provides_fix.diff
 Requires(pre): rpm-helper
 Requires(postun): rpm-helper
 Requires(pre):  apache-conf >= %{apache_version}
@@ -53,6 +54,7 @@ Interface to Athena.
 %patch0 -p0
 %patch1 -p0
 %patch2 -p0
+%patch3 -p1
 
 cp %{SOURCE1} %{mod_conf}
 
