@@ -60,7 +60,7 @@ cp %{SOURCE1} %{mod_conf}
 
 %build
 rm -rf autom4*cache
-libtoolize --copy --force; aclocal-1.7; automake-1.7 --add-missing --copy --foreign; autoheader; autoconf
+libtoolize --copy --force; aclocal; automake --add-missing --copy --foreign; autoheader; autoconf
 
 export CPPFLAGS="`apr-1-config --cppflags` `apr-1-config --includes` -I`%{_sbindir}/apxs -q INCLUDEDIR`"
 
