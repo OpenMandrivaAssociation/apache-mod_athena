@@ -7,7 +7,7 @@
 Summary:	Full-featured reverse-proxying and/or stand-alone load balancer
 Name:		apache-%{mod_name}
 Version:	2.2.4
-Release:	%mkrel 7
+Release:	8
 Group:		System/Servers
 License:	Apache License
 URL:		http://code.google.com/p/ath/
