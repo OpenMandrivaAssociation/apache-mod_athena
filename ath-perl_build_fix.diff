@@ -1,0 +1,20 @@
+--- src/perl/package/Athena/Makefile.PL	2008-01-08 20:54:20.000000000 +0100
++++ src/perl/package/Athena/Makefile.PL.oden	2008-05-06 17:21:10.000000000 +0200
+@@ -3,16 +3,12 @@
+ # the contents of the Makefile that is written.
+ 
+ my $PERL_BIN  = $ARGV[0] || '/usr/bin/perl';
+-my $INSTARGET = $ARGV[1] || '/usr/local/www/cgi-bin';
++my $INSTARGET = $ARGV[1] || '/var/www/cgi-bin';
+ my $EXECUTABLE = "./athena.pl";
+ 
+ autogen_executable();
+ autogen_WebAPI();
+ 
+-if (! -e $INSTARGET) {
+-  safe_die("The install target does not exist!");
+-}
+-
+ if (substr($INSTARGET, -1, 1) eq "/") {
+   $INSTARGET = substr($INSTARGET, 0, -1);
+ }

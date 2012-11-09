@@ -1,0 +1,32 @@
+--- src/c/module/Makefile.am	2008-01-08 20:54:18.000000000 +0100
++++ src/c/module/Makefile.am.oden	2008-05-06 15:41:44.000000000 +0200
+@@ -1,9 +1,9 @@
+ builddir = .
+ LIBS=$(APU_LIB_LD) $(APR_LIB_LD) $(APU_LIB_DEPS) $(APR_LIB_DEPS)
+ 
+-lib_LTLIBRARIES = libath.la
++lib_LTLIBRARIES = mod_athena.la
+ 
+-libath_la_SOURCES = \
++mod_athena_la_SOURCES = \
+ 	algorithm_safe.c \
+ 	farm_safe.c \
+ 	physical_safe.c \
+@@ -14,13 +14,13 @@
+ 	smartfarm.c \
+ 	mod_athena.c
+ 
+-libath_la_LIBADD = $(ATH_UTIL_LIB) $(ATH_LB_LIB)
+-libath_la_LDFLAGS = -module -avoid-version -rpath @APACHE2_HOME@/lib
++mod_athena_la_LIBADD = $(ATH_UTIL_LIB) $(ATH_LB_LIB)
++mod_athena_la_LDFLAGS = -module -avoid-version -rpath @APACHE2_HOME@/lib
+ 
+ install: install-modules
+ 
+-install-modules: libath.la
++install-modules: mod_athena.la
+ 	@APACHE2_HOME@/build/instdso.sh \
+-	SH_LIBTOOL=@APACHE2_HOME@/build/libtool libath.la \
++	SH_LIBTOOL=@APACHE2_HOME@/build/libtool mod_athena.la \
+ 	@APACHE2_HOME@/modules
+ 

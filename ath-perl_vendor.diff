@@ -1,0 +1,11 @@
+--- configure.in	2008-01-08 20:54:36.000000000 +0100
++++ configure.in.oden	2008-05-06 16:22:33.000000000 +0200
+@@ -155,7 +155,7 @@
+ ATH_PERL_PKG_DIR=src/perl/package/Athena
+ cd $ATH_PERL_PKG_DIR
+ cwd=$ath_top_srcdir/$ATH_PERL_PKG_DIR
+-$PERL Makefile.PL $PERL $CGI_BIN
++$PERL Makefile.PL $PERL $CGI_BIN INSTALLDIRS=vendor
+ cd $ath_top_srcdir
+ cwd=$ath_top_srcdir
+ 
