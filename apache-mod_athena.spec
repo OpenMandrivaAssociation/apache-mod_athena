@@ -10,7 +10,7 @@ Version:	2.2.4
 Release:	9
 Group:		System/Servers
 License:	Apache License
-URL:		http://code.google.com/p/ath/
+URL:		https://code.google.com/p/ath/
 Source0:	http://ath.googlecode.com/files/ath-%{version}.tgz
 Source1:	%{mod_conf}
 Patch0:		ath-mod_name_fix.diff
